@@ -139,7 +139,7 @@ def save_history():
 
     entry = f"From: {from_date} {from_time} | To: {to_date} {to_time}"
 
-    file_path = "uploads/history.txt"
+    file_path = "history.txt"
 
     if os.path.exists(file_path):
         with open(file_path, "r") as file:
@@ -168,7 +168,7 @@ def save_history():
 @app.route("/get_history", methods=["GET"])
 def get_history():
 
-    file_path = "uploads/history.txt"
+    file_path = "history.txt"
 
     if not os.path.exists(file_path):
         return jsonify({"history": []})
